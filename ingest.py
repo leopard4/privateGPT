@@ -85,7 +85,7 @@ def main():
 
     # Create embeddings
     llama = LlamaCppEmbeddings(model_path=llama_embeddings_model, n_ctx=model_n_ctx)
-    
+
     # Create and store locally vectorstore
     db = Chroma.from_documents(texts, llama, persist_directory=persist_directory, client_settings=CHROMA_SETTINGS)
     db.persist()
